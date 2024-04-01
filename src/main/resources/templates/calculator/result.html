@@ -8,6 +8,11 @@
 <h3>Калькулятор отпускных</h3>
 <p>Ваши отпускные равны:</p>
 <p th:text="${result.getVacationPay()}">VALUE</p>
+<p th:text="'Начало вашего отпуска: ' + ${result.getFirstDay()}">VALUE</p>
+<p th:text="'Окончание вашего отпуска: ' + ${result.getLastDay()}">VALUE</p>
+
+<p th:if="${result.getMessage() != null}" th:text="${result.getMessage()}">VALUE</p>
+
 <a th:href="@{/}">Новый расчёт</a>
 </body>
 </html>
