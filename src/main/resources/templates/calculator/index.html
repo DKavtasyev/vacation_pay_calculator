@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Калькулятор</title>
+</head>
+<body>
+<h3>Калькулятор отпускных</h3>
+<p>Введите параметры отпуска:</p>
+
+<form action="#" th:action="@{/calculate}" th:object="${vacationData}" method="POST">
+	<label for="vacationFrom">Дата начала отпуска: </label>
+	<input type="date" th:field="*{firstDay}" id="vacationFrom">
+	<br>
+	<label for="vacationTo">Дата окончания отпуска: </label>
+	<input type="date" th:field="*{lastDay}" id="vacationTo">
+	<div style="color: red" th:if="${#fields.hasErrors('lastDay')}" th:errors="*{lastDay}">lastDayError</div>
+	<br>
+	<label for="avgSalary">Средняя зарплата: </label>
+	<input type="text" th:field="*{avgSalary}" id="avgSalary">
+	<div style="color: red" th:if="${#fields.hasErrors('avgSalary')}" th:errors="*{avgSalary}">avgSalaryError</div>
+	<br>
+	<input type="submit" value="Посчитать отпускные">
+</form>
+
+</body>
+</html>

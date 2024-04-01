@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Результат</title>
+</head>
+<body>
+<h3>Калькулятор отпускных</h3>
+<p>Ваши отпускные равны:</p>
+<p th:text="${result.getVacationPay()}">VALUE</p>
+<a th:href="@{/}">Новый расчёт</a>
+</body>
+</html>
